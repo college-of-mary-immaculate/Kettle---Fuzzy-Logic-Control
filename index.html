@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Heater Control</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Water Heater Control Panel</h1>
+
+    <div class="inputs">
+        <div class="floating-label">
+            <label for="water-level">Water Level (Liters):</label>
+            <input type="range" id="water-level" min="1" max="5" step="0.1" value="5" oninput="updateLevel(this.value)">
+            <span id="water-level-display">5.0 Liters</span>
+        </div>
+        
+        <div class="floating-label">
+            <label for="water-temperature">Water Temperature (°C):</label>
+            <input type="range" id="water-temperature" min="0" max="90" step="0.1" value="10" oninput="updateTemperature(this.value)">
+            <span id="water-temperature-display">10.0 °C</span>
+        </div>
+        
+        <button id="start-button">Start Simulation</button>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <img id="heater-image" src="teapot.png" alt="Electric Heater" width="150">
+            <div class="temperature-bar">
+                <div id="temperature-fill" class="temperature-fill" style="height: 0;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="status"></div>
+    <div id="heating-power">Heating Power: 0%</div>
+    <div id="current-temperature">Current Temperature: 10.0 °C</div>
+
+</body>
+</html>
